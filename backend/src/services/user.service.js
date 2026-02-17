@@ -20,7 +20,14 @@ class UserService {
     };
 
     async getAllUsers() {
-        return await User.findAll();
+        return await User.findAll({
+            include: [
+                {
+                    model: Wallet,
+                    attributes: ['balance', 'currency'],
+                }
+            ]
+        });
     }
 }
 

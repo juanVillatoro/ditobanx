@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/users', userRoutes);
-app.use('/transfers', transferRoutes);
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/transfers', transferRoutes);
 
 module.exports = app;
